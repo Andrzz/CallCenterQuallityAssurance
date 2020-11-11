@@ -1,0 +1,6 @@
+C:\Users\Andres Osorio\source\repos\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Andres Osorio\source\repos\Domain\bin\Debug\Domain.dll.config
+C:\Users\Andres Osorio\source\repos\Domain\bin\Debug\Domain.dll
+C:\Users\Andres Osorio\source\repos\Domain\bin\Debug\Domain.pdb
+C:\Users\Andres Osorio\source\repos\Domain\obj\Debug\Domain.dll
+C:\Users\Andres Osorio\source\repos\Domain\obj\Debug\Domain.pdb

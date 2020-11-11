@@ -1,0 +1,6 @@
+C:\Users\Andres Osorio\source\repos\Infrastructure\obj\Debug\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Andres Osorio\source\repos\Infrastructure\bin\Debug\Infrastructure.dll.config
+C:\Users\Andres Osorio\source\repos\Infrastructure\bin\Debug\Infrastructure.dll
+C:\Users\Andres Osorio\source\repos\Infrastructure\bin\Debug\Infrastructure.pdb
+C:\Users\Andres Osorio\source\repos\Infrastructure\obj\Debug\Infrastructure.dll
+C:\Users\Andres Osorio\source\repos\Infrastructure\obj\Debug\Infrastructure.pdb
