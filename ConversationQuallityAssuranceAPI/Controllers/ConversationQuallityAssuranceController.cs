@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Application.ConversationProcess.viewModels;
 using ConversationQuallityAssuranceAPI.Exception;
 using ConversationQuallityAssuranceAPI.Mappers;
@@ -36,7 +37,7 @@ namespace ConversationQuallityAssuranceAPI.Controllers
             {
                 _logger.LogError($"Internal Server Error, reason: {ex.Message}");
                 if(ex.Message.Contains("format")) return new List<ConversationViewModel>() { new ConversationViewModel() { Name = "FORMATERROR"} };
-                else return new List<ConversationViewModel>() { new ConversationViewModel() { Name = "GENERICERROR" } };
+                else return new List<ConversationViewModel>() { new ConversationViewModel() { Name = ex.Message.Split('>').ToList().LastOrDefault() } };
             }            
         }
     }
