@@ -31,14 +31,14 @@ namespace ConversationQuallityAssuranceAPI
                     policy
                         .AllowAnyHeader()
                         .AllowAnyMethod()
-                        .WithOrigins("http://localhost:4200")
-                        .AllowCredentials();
+                        .AllowAnyOrigin();
                 });
             });
             services.AddScoped<IFileManager, FIleManager>();
             services.AddScoped<IUnscoredEmptyModelsService, UnscoredEmptyModelService>();
             services.AddScoped<IScoreCalculatorService, ScoreCalculatorService>();
             services.AddScoped<IConversationProcess, ConversationProcessor>();
+            services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,8 +48,8 @@ namespace ConversationQuallityAssuranceAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
+            app.UseCors("CorsPolicy");
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -59,6 +59,8 @@ namespace ConversationQuallityAssuranceAPI
             {
                 endpoints.MapControllers();
             });
+            
+            app.UseMvc();
         }
     }
 }

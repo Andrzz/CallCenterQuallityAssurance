@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Application.ConversationProcess.viewModels;
-using ConversationQuallityAssuranceAPI.Exception;
 using ConversationQuallityAssuranceAPI.Mappers;
 using ConversationQuallityAssuranceAPI.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -14,9 +13,7 @@ namespace ConversationQuallityAssuranceAPI.Controllers
     [Route("[controller]")]
     public class ConversationQuallityAssuranceController : ControllerBase
     {
-        private readonly IConversationProcess _conversationProcess;
-
-        private static string routeToFile = "C:\\\\\\historial_de_conversaciones.txt";
+        private readonly IConversationProcess _conversationProcess;        
 
         private readonly ILogger<ConversationQuallityAssuranceController> _logger;
 
@@ -31,7 +28,7 @@ namespace ConversationQuallityAssuranceAPI.Controllers
         {
             try
             {
-                return ConversationMapper.MapDataModelToViewModel(_conversationProcess.ProcessConversations(routeToFile));
+                return ConversationMapper.MapDataModelToViewModel(_conversationProcess.ProcessConversations());
             }
             catch (System.Exception ex)
             {

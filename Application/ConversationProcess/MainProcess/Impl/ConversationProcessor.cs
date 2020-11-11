@@ -23,12 +23,12 @@
             _scoreCalculatorService = scoreCalculatorService ?? throw new ArgumentNullException(nameof(scoreCalculatorService));
         }
 
-        public List<ConversationDataModel> ProcessConversations(string pathToFile)
+        public List<ConversationDataModel> ProcessConversations()
         {
             List<ConversationDataModel> scoredConversations = new List<ConversationDataModel>();
             var functionToExecute = new Func<bool>(() =>
             {
-                var fileLines = _fileManager.ReadLines(pathToFile);
+                var fileLines = _fileManager.ReadLines(ConfigurationKeys.GetRouteToFile());
                 var matchingWordsList = ConfigurationKeys.GetListOfMatchingWords().Split(',').ToList();
                 var unscoredConversationModelsFromFile = _unscoredEmptyModelsService.GetNotScoredConversationModels(fileLines, ConfigurationKeys.GetConversationStartIdentifier());
                 scoredConversations = _scoreCalculatorService.RateConversations(unscoredConversationModelsFromFile, ConfigurationKeys.GetUrgenMatch(), matchingWordsList, ConfigurationKeys.GetExcelentMatch());

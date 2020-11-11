@@ -9,6 +9,6 @@
         /// </summary>
         /// <param name="pathToFile"></param>
         /// <returns></returns>
-        List<ConversationDataModel> ProcessConversations(string pathToFile);
+        List<ConversationDataModel> ProcessConversations();
     }
 }

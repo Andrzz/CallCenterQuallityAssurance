@@ -29,7 +29,7 @@
             var sut = new ConversationProcessor(fileManagerMock.Object, unscoredEmptyModelsServiceMock.Object, scoreCalculatorServiceMock.Object);
             #endregion
             #region Asserts
-            NUnit.Framework.Assert.DoesNotThrow(() => sut.ProcessConversations(It.IsAny<string>()));
+            NUnit.Framework.Assert.DoesNotThrow(() => sut.ProcessConversations());
             fileManagerMock.Verify(fm => fm.ReadLines(It.IsAny<string>()), Times.Once);
             unscoredEmptyModelsServiceMock.Verify(ue => ue.GetNotScoredConversationModels(It.IsAny<string[]>(), It.IsAny<string>()), Times.Once);
             scoreCalculatorServiceMock.Verify(sc => sc.RateConversations(It.IsAny<List<ConversationDataModel>>(), It.IsAny<string>(), It.IsAny<List<string>>(), It.IsAny<string>()), Times.Once);
