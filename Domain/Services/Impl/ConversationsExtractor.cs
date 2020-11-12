@@ -31,7 +31,7 @@
                 }
                 if(converSationFormatVerifier == 0)
                 {
-                    throw new EmptyModelServiceException($"ConversationsExtractor => ExtractConversationFromArray => Incorrect format file, no conversations detected", new Exception());
+                    throw new EmptyModelServiceException($"Incorrect format file, no conversations detected", new Exception());
                 }
                 return true;
             });
