@@ -19,7 +19,7 @@
                 int converSationFormatVerifier = 0;
                 for (int actualLine = 0; actualLine < conversations.Length; actualLine++)
                 {
-                    if (conversations[actualLine].Contains(coversationStartIdentifier.ToUpperInvariant()))
+                    if (conversations[actualLine].Contains(coversationStartIdentifier.ToUpperInvariant()) && conversations[actualLine].Split(' ').Length == 2)
                     {
                         converSationFormatVerifier++;
                         int nextLine = actualLine + 1;
