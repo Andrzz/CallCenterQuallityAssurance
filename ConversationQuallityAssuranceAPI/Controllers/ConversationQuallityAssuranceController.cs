@@ -33,8 +33,7 @@ namespace ConversationQuallityAssuranceAPI.Controllers
             catch (System.Exception ex)
             {
                 _logger.LogError($"Internal Server Error, reason: {ex.Message}");
-                if(ex.Message.Contains("format")) return new List<ConversationViewModel>() { new ConversationViewModel() { Name = "FORMATERROR"} };
-                else return new List<ConversationViewModel>() { new ConversationViewModel() { Name = ex.Message.Split('>').ToList().LastOrDefault() } };
+                return new List<ConversationViewModel>() { new ConversationViewModel() { Name = ex.Message.Split('>').ToList().LastOrDefault() } };
             }            
         }
     }
